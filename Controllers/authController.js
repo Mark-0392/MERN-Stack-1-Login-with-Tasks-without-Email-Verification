@@ -137,8 +137,8 @@ const forgot_Password = async (req, res) => {
   // user.passwordExpirationDate = password_Expiration_Date
   await user.save()
 
-  // const origin = 'https://mern-stack-1-login-with-tasks-without.onrender.com'
-  const origin = 'http://localhost:5000'
+  const origin = 'https://mern-stack-1-login-with-tasks-without.onrender.com'
+  // const origin = 'http://localhost:5000'
   const reset_Password_URL = `${origin}/resetPassword?token=${password_Token}&email=${email}`
   res.status(StatusCodes.OK).send(`${reset_Password_URL}`)
 }

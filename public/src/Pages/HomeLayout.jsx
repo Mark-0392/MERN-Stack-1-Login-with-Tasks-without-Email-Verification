@@ -10,16 +10,16 @@ const HomeLayout = () => {
   return (
     <>
       <div className="h-screen bg-slate-50 max-w-6xl mx-auto relative">
-        {isPageLoading ? (
+        {/* {isPageLoading ? (
           <Loading />
         ) : (
           <>
             <Navbar /> <Sidebar /> <Outlet />
           </>
-        )}
-        {/* <Navbar />
+        )} */}
+        <Navbar />
         <Sidebar />
-        <Outlet /> */}
+        {isPageLoading ? <Loading /> : <Outlet />}
       </div>
     </>
   )
