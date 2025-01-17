@@ -33,6 +33,7 @@ const limiter = rateLimit({
 app.use(limiter)
 app.use(helmet())
 app.use(cors())
+// app.use(express.static(path.resolve(__dirname, './public/dist')))
 app.use(express.static(path.resolve(__dirname, './public/dist')))
 app.use(xss())
 app.use(mongoSanitize())
@@ -45,6 +46,9 @@ app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/users', userRouter)
 app.use('/api/v1/tasks', taskRouter)
 
+// app.get('*', (req, res) => {
+//   res.sendFile(path.resolve(__dirname, './public/dist', 'index.html'))
+// })
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, './public/dist', 'index.html'))
 })
