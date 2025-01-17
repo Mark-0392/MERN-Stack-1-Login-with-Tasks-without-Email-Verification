@@ -40,8 +40,6 @@ app.use(mongoSanitize())
 app.use(express.json())
 app.use(cookieParser(process.env.Signed_Cookie))
 
-app.use(express.static('./public'))
-
 // Routes
 app.use('/api/v1/auth', authRouter)
 app.use('/api/v1/users', userRouter)
