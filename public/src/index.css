@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Roboto Bold Italic';
+    font-weight: 700;
+    font-style: italic;
+    src: url('/Roboto Fonts/Roboto-BoldItalic.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Ysabeau Bold';
+    font-weight: 900;
+    /* font-style: normal; */
+    src: url('/Ysabeau Fonts/YsabeauSC-Black.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'Ysabeau Regular';
+    font-weight: 400;
+    /* font-style: normal; */
+    src: url('/Ysabeau Fonts/YsabeauSC-Regular.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'Playfair SemiBold SemiExpanded';
+    font-weight: 600;
+    src: url('/Playfair semibold/Playfair_9pt_SemiExpanded-SemiBold.woff')
+      format('woff');
+  }
+  @font-face {
+    font-family: 'DM Serif Font';
+    font-weight: 400;
+    src: url('/DMSerif Font/DMSerifText-Regular.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'Tangerine Regular';
+    font-weight: 400;
+    src: url('/Tangerine Font/Tangerine-Regular.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'BlackOps Regular';
+    font-weight: 400;
+    src: url('/Black_Ops_One Font/BlackOpsOne-Regular.woff') format('woff');
+  }
+  @font-face {
+    font-family: 'LeckerLi One Regular';
+    font-weight: 400;
+    src: url('/Leckerli_One Font/LeckerliOne-Regular.woff') format('woff');
+  }
+}
