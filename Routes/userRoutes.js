@@ -16,7 +16,7 @@ router
   .route('/')
   .get(authenticate_User, authorize_Permissions('admin'), get_All_Users)
 router.route('/showMe').get(authenticate_User, show_Current_User)
-router.route('/updateUserDetails').patch(authenticate_User, update_User)
+router.route('/userDetailsUpdate').patch(authenticate_User, update_User)
 router
   .route('/updateUserPassword')
   .patch(authenticate_User, update_User_Password)
