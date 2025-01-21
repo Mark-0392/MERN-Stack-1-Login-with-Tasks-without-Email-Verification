@@ -11,15 +11,13 @@ export const action =
   async ({ request }) => {
     const formData = await request.formData()
     const data = Object.fromEntries(formData)
-    // const dispatch = useDispatch()
+
     try {
       const response = await axios.post('/api/v1/auth/login', data)
       store.dispatch(loginUser(response.data))
       toast.success('You have successfully logged in')
       return redirect('/dashboard')
     } catch (error) {
-      console.log(error)
-
       const error_Message = error?.response?.data?.msg
       toast.error(error_Message)
       return null

@@ -4,7 +4,7 @@ const initialState = {
   isOpen: false,
   isSelectedText: 'Home',
   isNavOpen: false,
-  isActive: 'Home',
+  isActive: '',
 }
 
 const SettingSlice = createSlice({
