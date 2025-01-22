@@ -11,9 +11,13 @@ export const action = async ({ request }) => {
 
   try {
     const response = await BaseURL.post('api/v1/auth/register', data)
+    // console.log(response)
+
     toast.success(response.data.msg)
     return redirect('/login')
   } catch (error) {
+    // console.log(error)
+
     const error_Message =
       error?.response?.data?.msg || 'Please check your credentials'
     toast.error(error_Message)

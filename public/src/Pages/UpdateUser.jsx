@@ -18,7 +18,7 @@ export const action = async ({ request }) => {
     return redirect('/login')
   } catch (error) {
     const errorMsg = error?.response?.data?.msg
-    toast.error(errorMsg)
+
     console.log(errorMsg)
     return null
   }
@@ -29,9 +29,9 @@ const UpdateUser = () => {
     <div className="max-sm:h-[calc(100%-40px)] md:h-[calc(100%-44px)] lg:h-[calc(100%-52px)] grid place-items-center bg-slate-800 lg:bg-white">
       <Form
         method="patch"
-        className=" w-11/12 max-w-[500px] grid grid-flow-row gap-y-5 rounded-lg  px-2 lg:px-4 lg:mx-0 hover:shadow-lg hover:shadow-purple-400 lg:hover:shadow-lg lg:hover:shadow-fuchsia-400/50  duration-700  pt-4 border-2 border-slate-700 lg:border"
+        className=" w-11/12 max-w-[500px] grid grid-flow-row gap-y-5 rounded-lg  px-4 lg:mx-0 hover:shadow-lg hover:shadow-purple-400 lg:hover:shadow-lg lg:hover:shadow-fuchsia-400/50  duration-700 py-2 border"
       >
-        <h1 className="text-lg font-semibold text-red-700 lg:text-blue-600 lg:text-xl  items-center font-DM_Serif_FontBold tracking-wider bg-slate-200 lg:bg-slate-200 text-center py-2 rounded-sm">
+        <h1 className="text-base font-semibold text-white lg:text-black lg:text-2xl text-center  items-center font-Playfair_SemiBold ">
           Update Your Email and Name
         </h1>
         <div className="mb-3">
@@ -53,11 +53,7 @@ const UpdateUser = () => {
           </div>
         </div>
         <div className="mb-4">
-          <SubmitButtonCommon
-            text="Submit"
-            navigationState="sending"
-            width={'w-full'}
-          />
+          <SubmitButtonCommon text="Submit" navigationState="sending" />
         </div>
       </Form>
     </div>
