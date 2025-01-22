@@ -42,9 +42,18 @@ app.use(express.json())
 app.use(cookieParser(process.env.Signed_Cookie))
 
 // Routes
-app.use('/api/v1/auth', authRouter)
-app.use('/api/v1/users', userRouter)
-app.use('/api/v1/tasks', taskRouter)
+app.use(
+  'https://mern-stack-1-login-with-tasks-without.onrender.com/api/v1/auth',
+  authRouter
+)
+app.use(
+  'https://mern-stack-1-login-with-tasks-without.onrender.com/api/v1/users',
+  userRouter
+)
+app.use(
+  'https://mern-stack-1-login-with-tasks-without.onrender.com/api/v1/tasks',
+  taskRouter
+)
 
 // app.get('*', (req, res) => {
 //   res.sendFile(path.resolve(__dirname, './public/dist', 'index.html'))
