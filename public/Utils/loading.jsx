@@ -1,14 +1,44 @@
-import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 const Loading = () => {
   return (
-    <div className="flex justify-center items-center max-sm:h-[calc(100%-40px)] md:h-[calc(100%-44px)] lg:h-[calc(100%-52px)]">
-      <div className=" flex justify-center items-center gap-x-2 h-40 ">
-        <h1 className="text-lg font-medium text-red-400">Loading . . . </h1>
-        <div className="text-black">
-          <AiOutlineLoading3Quarters size={60} className="animate-spin " />
-        </div>
-      </div>
-    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+      <circle
+        fill="none"
+        strokeOpacity="1"
+        stroke="#FF156D"
+        strokeWidth=".5"
+        cx="100"
+        cy="100"
+        r="0"
+      >
+        <animate
+          attributeName="r"
+          calcMode="spline"
+          dur="2"
+          values="1;80"
+          keyTimes="0;1"
+          keySplines="0 .2 .5 1"
+          repeatCount="indefinite"
+        ></animate>
+        <animate
+          attributeName="stroke-width"
+          calcMode="spline"
+          dur="2"
+          values="0;25"
+          keyTimes="0;1"
+          keySplines="0 .2 .5 1"
+          repeatCount="indefinite"
+        ></animate>
+        <animate
+          attributeName="stroke-opacity"
+          calcMode="spline"
+          dur="2"
+          values="1;0"
+          keyTimes="0;1"
+          keySplines="0 .2 .5 1"
+          repeatCount="indefinite"
+        ></animate>
+      </circle>
+    </svg>
   )
 }
 export default Loading

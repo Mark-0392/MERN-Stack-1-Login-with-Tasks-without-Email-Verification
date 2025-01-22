@@ -9,7 +9,7 @@ export const action = async ({ request }) => {
   const data = Object.fromEntries(formData)
 
   try {
-    const response = await axios.patch('/api/v1/users/userDetailsUpdate', data)
+    const response = await axios.patch('/api/v1/users/updateUser', data)
 
     toast.success(response.data.msg)
     toast.success(
