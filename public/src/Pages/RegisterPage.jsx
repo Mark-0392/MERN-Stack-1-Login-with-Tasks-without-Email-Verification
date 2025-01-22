@@ -2,15 +2,16 @@ import { Form, Link, redirect } from 'react-router-dom'
 import SubmitButtonCommon from '../Components/SubmitButtonCommon'
 import CommonFormLayout from '../Components/CommonFormLayout'
 import RegisterPageHeader from '../Components/Register Page Components/RegisterPage Header'
-import { BaseURL } from '../../Utils/BaseUrl'
+
 import { toast } from 'react-toastify'
+import axios from 'axios'
 
 export const action = async ({ request }) => {
   const formData = await request.formData()
   const data = Object.fromEntries(formData)
 
   try {
-    const response = await BaseURL.post('api/v1/auth/register', data)
+    const response = await axios.post('api/v1/auth/register', data)
     // console.log(response)
 
     toast.success(response.data.msg)
