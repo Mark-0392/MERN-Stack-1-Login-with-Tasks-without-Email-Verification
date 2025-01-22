@@ -1,6 +1,7 @@
 const User = require('../Models/User')
 const { StatusCodes } = require('http-status-codes')
 const CustomError = require('../Errors')
+const Token = require('../Models/Token')
 const {
   createTokenUser,
 
