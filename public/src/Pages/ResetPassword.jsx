@@ -19,7 +19,7 @@ export const action = async ({ request }) => {
   }
 
   try {
-    const response = await axios.post('/api/v1/auth/reset-password', data)
+    const response = await axios.post('api/v1/auth/reset-password', data)
     // console.log(response.data)
 
     toast.success(response.data.msg)

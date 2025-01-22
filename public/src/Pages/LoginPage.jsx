@@ -13,7 +13,7 @@ export const action =
     const data = Object.fromEntries(formData)
     // const dispatch = useDispatch()
     try {
-      const response = await axios.post('/api/v1/auth/login', data)
+      const response = await axios.post('api/v1/auth/login', data)
       store.dispatch(loginUser(response.data))
       toast.success('You have successfully logged in')
       return redirect('/dashboard')
@@ -30,7 +30,7 @@ function LoginPage() {
   return (
     <div className="flex justify-center items-center min-h-screen max-lg:bg-night bg-cover bg-center px-2 lg:bg-loginPage">
       <Form
-        method="post"
+        method="POST"
         className="w-full max-w-[500px]  h-[420px] shadow-lg rounded-lg bg-black/60 border-white/10 px-4 flex flex-col justify-center gap-2  lg:bg-white lg:border-pink-700"
       >
         <h2 className="text-2xl font-Playfair_SemiBold font-semibold  text-white lg:text-pink-600 lg:text-4xl text-center ">

@@ -9,12 +9,12 @@ export const action = async ({ request }) => {
   const data = Object.fromEntries(formData)
 
   try {
-    const response = await axios.patch('/api/v1/users/updateUser', data)
+    const response = await axios.patch('api/v1/users/updateUser', data)
 
     toast.success(response.data.msg)
-    toast.success(
-      'Please login with your new updated email address to continue'
-    )
+    // toast.success(
+    //   'Please login with your new updated email address to continue'
+    // )
     return redirect('/login')
   } catch (error) {
     const errorMsg = error?.response?.data?.msg
