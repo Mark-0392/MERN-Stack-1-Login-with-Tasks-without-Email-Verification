@@ -8,7 +8,7 @@ export const action = async ({ request }) => {
   const data = Object.fromEntries(formData)
 
   try {
-    const response = await axios.patch('api/v1/users/updateUserPassword', data)
+    const response = await axios.patch('/api/v1/users/updateUserPassword', data)
     toast.success(response.data.message)
     toast.success('Please login with the new password to continue')
     return redirect('/login')

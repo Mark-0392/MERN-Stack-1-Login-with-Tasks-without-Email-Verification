@@ -13,7 +13,7 @@ export const action =
     const data = Object.fromEntries(formData)
     // const dispatch = useDispatch()
     try {
-      const response = await axios.post('api/v1/auth/login', data)
+      const response = await axios.post('/api/v1/auth/login', data)
       store.dispatch(loginUser(response.data))
       toast.success('You have successfully logged in')
       return redirect('/dashboard')
