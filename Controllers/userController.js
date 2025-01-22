@@ -51,7 +51,7 @@ const update_User = async (req, res) => {
   const user = await User.findOne({ _id: req.user.userId })
 
   user.email = email
-  user.firstName = name
+  user.name = name
 
   await user.save()
 
