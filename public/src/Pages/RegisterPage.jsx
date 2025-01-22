@@ -5,13 +5,14 @@ import RegisterPageHeader from '../Components/Register Page Components/RegisterP
 
 import { toast } from 'react-toastify'
 import axios from 'axios'
+import { BaseURL } from '../../Utils/BaseUrl'
 
 export const action = async ({ request }) => {
   const formData = await request.formData()
   const data = Object.fromEntries(formData)
 
   try {
-    const response = await axios.post('/api/v1/auth/register', data)
+    const response = await BaseURL.post('/api/v1/auth/register', data)
     // console.log(response)
 
     toast.success(response.data.msg)

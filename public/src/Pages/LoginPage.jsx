@@ -5,6 +5,7 @@ import { Form, Link, redirect } from 'react-router-dom'
 
 import { loginUser } from '../../Features/Users/userSlice'
 import axios from 'axios'
+import { BaseURL } from '../../Utils/BaseUrl'
 
 export const action =
   (store) =>
@@ -12,8 +13,9 @@ export const action =
     const formData = await request.formData()
     const data = Object.fromEntries(formData)
     // const dispatch = useDispatch()
+
     try {
-      const response = await axios.post('/api/v1/auth/login', data)
+      const response = await BaseURL.post('/api/v1/auth/login', data)
       store.dispatch(loginUser(response.data))
       toast.success('You have successfully logged in')
       return redirect('/dashboard')

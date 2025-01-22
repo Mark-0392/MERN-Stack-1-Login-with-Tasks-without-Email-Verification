@@ -3,13 +3,14 @@ import CommonFormLayout from '../Components/CommonFormLayout'
 import SubmitButtonCommon from '../Components/SubmitButtonCommon'
 import axios from 'axios'
 import { toast } from 'react-toastify'
+import { BaseURL } from '../../Utils/BaseUrl'
 
 export const action = async ({ request }) => {
   const formData = await request.formData()
   const data = Object.fromEntries(formData)
 
   try {
-    const response = await axios.patch('/api/v1/users/updateUser', data)
+    const response = await BaseURL.patch('/api/v1/users/updateUser', data)
 
     toast.success(response.data.msg)
     // toast.success(
