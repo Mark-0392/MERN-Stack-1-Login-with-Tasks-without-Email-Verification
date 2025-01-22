@@ -56,16 +56,20 @@ const update_User = async (req, res) => {
   await user.save()
 
   const tokenUser = createTokenUser(user)
-  // const token = createJWT(tokenUser)
-  // const One_Day = 1000 * 60 * 60 * 24
-  // res.cookie('token', token, {
-  //   httpOnly: true,
-  //   expires: new Date(Date.now() + One_Day),
-  //   secure: process.env.NODE_ENV === 'production',
-  //   signed: true,
-  // })
-  create_Token_and_cookie_and_send(res, tokenUser)
-  res.status(StatusCodes.OK).json({ user: tokenUser })
+
+  // checking for refresh token
+  const existing_Token = await Token.findOne({ user: req.user.userId })
+
+  const { isValid } = existing_Token
+  if (!isValid) {
+    throw new CustomError.UnAuthenticatedError('Invalid Credentials')
+  }
+  refreshToken = existing_Token.refreshToken
+  create_Token_and_cookie_and_send({ res, tokenUser, refreshToken })
+  res.status(StatusCodes.OK).json({
+    user: tokenUser,
+    msg: 'Your details have been updated successfully. Please login using your updated email address.',
+  })
 }
 
 const update_User_Password = async (req, res) => {
@@ -102,3 +106,12 @@ module.exports = {
   update_User,
   update_User_Password,
 }
+
+// const token = createJWT(tokenUser)
+// const One_Day = 1000 * 60 * 60 * 24
+// res.cookie('token', token, {
+//   httpOnly: true,
+//   expires: new Date(Date.now() + One_Day),
+//   secure: process.env.NODE_ENV === 'production',
+//   signed: true,
+// })

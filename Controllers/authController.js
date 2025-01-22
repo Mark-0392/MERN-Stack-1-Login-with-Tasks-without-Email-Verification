@@ -122,23 +122,12 @@ const forgot_Password = async (req, res) => {
 
   const password_Token = crypto.randomBytes(40).toString('hex')
 
-  // const ten_Minutes = 1000 * 60 * 10
-
-  // const password_Expiration_Date = new Date(Date.now() + ten_Minutes) // 10 minutes
-
-  // send reset password link through email
-  // await send_Reset_Password_Email({
-  //   name: user.name,
-  //   email: user.email,
-  //   token: password_Token,
-  //   origin,
-  // })
   user.passwordToken = create_Hash(password_Token)
   // user.passwordExpirationDate = password_Expiration_Date
   await user.save()
 
   const origin = 'https://mern-stack-1-login-with-tasks-without.onrender.com'
-  // const origin = 'http://localhost:5000'
+
   const reset_Password_URL = `${origin}/resetPassword?token=${password_Token}&email=${email}`
   res.status(StatusCodes.OK).send(`${reset_Password_URL}`)
 }
@@ -152,11 +141,6 @@ const reset_Password = async (req, res) => {
 
   const user = await User.findOne({ email })
   if (user) {
-    // const current_Time = new Date()
-    // if (
-    //   user.passwordToken === create_Hash(token) &&
-    //   user.passwordExpirationDate > current_Time
-    // )
     if (user.passwordToken === create_Hash(token)) {
       user.password = password
       user.passwordToken = null
@@ -177,3 +161,23 @@ module.exports = {
   forgot_Password,
   reset_Password,
 }
+
+// const ten_Minutes = 1000 * 60 * 10
+
+// const password_Expiration_Date = new Date(Date.now() + ten_Minutes) // 10 minutes
+
+// send reset password link through email
+// await send_Reset_Password_Email({
+//   name: user.name,
+//   email: user.email,
+//   token: password_Token,
+//   origin,
+// })
+
+// const current_Time = new Date()
+// if (
+//   user.passwordToken === create_Hash(token) &&
+//   user.passwordExpirationDate > current_Time
+// )
+
+// const origin = 'http://localhost:5000'
