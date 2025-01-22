@@ -1,4 +1,3 @@
-import { TbTruckLoading } from 'react-icons/tb'
 import { AiOutlineLoading3Quarters } from 'react-icons/ai'
 const Loading = () => {
   return (

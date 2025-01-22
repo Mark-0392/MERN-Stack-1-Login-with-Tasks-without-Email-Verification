@@ -3,7 +3,7 @@ const CommonFormLayout = ({ type, name, defaultValue, placeholder, label }) => {
     <div>
       <label
         htmlFor={name}
-        className="block text-base tracking-wide font-Roboto_Bold_Italic lg:text-lg lg:tracking-normal text-white  px-1 lg:text-black"
+        className="block text-base tracking-wide font-Roboto_Bold_Italic lg:text-xl lg:tracking-normal text-white mb-1 px-1 lg:text-black"
       >
         {label}
       </label>

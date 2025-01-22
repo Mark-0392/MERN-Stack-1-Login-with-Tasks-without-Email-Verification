@@ -40,10 +40,10 @@ export const action = async ({ request }) => {
 const Landing = () => {
   const { tasks } = useLoaderData()
 
-  // const dispatch = useDispatch()
-  // useEffect(() => {
-  //   dispatch(getUserDetails())
-  // }, [])
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getUserDetails())
+  }, [])
 
   return (
     <div className="  w-full sm:h-[calc(100%-40px)] md:h-[calc(100%-44px)] lg:h-[calc(100%-52px)] px-2  mx-auto flex flex-col items-center justify-center  bg-landing bg-cover bg-no-repeat bg-center">

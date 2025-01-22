@@ -5,7 +5,7 @@ import { LuMenuSquare } from 'react-icons/lu'
 import { IoSettingsOutline } from 'react-icons/io5'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { useLoaderData, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import { logoutUser } from '../../Features/Users/userSlice'
 import DropDownSetting from './DropDownSetting'
@@ -16,10 +16,7 @@ import { getUserDetails } from '../../Features/Users/userSlice'
 import { useEffect } from 'react'
 
 const Navbar = () => {
-  // const { user: users } = useLoaderData()
-
   const user = useSelector((state) => state.userState.user)
-
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(getUserDetails())
