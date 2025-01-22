@@ -4,11 +4,10 @@ import SubmitButtonCommon from '../Components/SubmitButtonCommon'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import { useState } from 'react'
-import { BaseURL } from '../../Utils/BaseUrl'
 
 export const loader = async ({ params }) => {
   try {
-    const response = await BaseURL.get(`/api/v1/tasks/${params.id}`)
+    const response = await axios.get(`/api/v1/tasks/${params.id}`)
     const SingleTask = response.data
     return SingleTask
   } catch (error) {
@@ -36,7 +35,7 @@ export const action = async ({ request }) => {
   const value = url.split('/editTasks/')[1]
 
   try {
-    const response = await BaseURL.patch(`/api/v1/tasks/${value}`, data)
+    const response = await axios.patch(`/api/v1/tasks/${value}`, data)
     const updatedTask = response.data.tasks
     toast.success(response.data.msg)
     return redirect('/dashboard')

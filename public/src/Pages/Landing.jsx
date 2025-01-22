@@ -9,11 +9,10 @@ import { getUserDetails } from '../../Features/Users/userSlice'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import ShowTasks from '../Components/ShowTasks'
-import { BaseURL } from '../../Utils/BaseUrl'
 
 export const loader = async () => {
   try {
-    const response = await BaseURL.get('/api/v1/tasks/')
+    const response = await axios.get('/api/v1/tasks/')
     const getAlltasks = response.data
     return getAlltasks
   } catch (error) {
@@ -27,7 +26,7 @@ export const action = async ({ request }) => {
   const data = Object.fromEntries(formData)
 
   try {
-    const response = await BaseURL.post('/api/v1/tasks/', data)
+    const response = await axios.post('/api/v1/tasks/', data)
     // console.log(response.data)
     toast.success('task created successfully')
     return response.data

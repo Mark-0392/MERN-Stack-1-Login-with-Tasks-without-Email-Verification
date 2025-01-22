@@ -2,7 +2,6 @@ import { Form, redirect, useNavigation } from 'react-router-dom'
 import SubmitButtonCommon from '../Components/SubmitButtonCommon'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import { BaseURL } from '../../Utils/BaseUrl'
 
 export const action = async ({ request }) => {
   const formData = await request.formData()
@@ -20,7 +19,7 @@ export const action = async ({ request }) => {
   }
 
   try {
-    const response = await BaseURL.post('/api/v1/auth/reset-password', data)
+    const response = await axios.post('/api/v1/auth/reset-password', data)
     // console.log(response.data)
 
     toast.success(response.data.msg)

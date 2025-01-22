@@ -3,13 +3,11 @@ import CommonButtonLayout from '../Components/CommonButtonLayout'
 import axios from 'axios'
 import dayjs from 'dayjs'
 import advancedFormat from 'dayjs/plugin/advancedFormat'
-import { BaseURL } from '../../Utils/BaseUrl'
 dayjs.extend(advancedFormat)
 
 export const loader = async ({ params }) => {
   // const response = await axios.get('/api/v1/tasks/' + params.id)
-
-  const response = await BaseURL.get(`/api/v1/tasks/${params.id}`)
+  const response = await axios.get(`/api/v1/tasks/${params.id}`)
   const getSingleTask = response.data
 
   return getSingleTask

@@ -3,14 +3,13 @@ import CommonFormLayout from '../Components/CommonFormLayout'
 import SubmitButtonCommon from '../Components/SubmitButtonCommon'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import { BaseURL } from '../../Utils/BaseUrl'
 
 export const action = async ({ request }) => {
   const formData = await request.formData()
   const data = Object.fromEntries(formData)
 
   try {
-    const response = await BaseURL.post('/api/v1/auth/forgot-password', data)
+    const response = await axios.post('api/v1/auth/forgot-password', data)
     return redirect(response.data)
   } catch (error) {
     const errorMsg = error?.response?.data?.msg

@@ -2,17 +2,13 @@ import { Form, redirect } from 'react-router-dom'
 import SubmitButtonCommon from '../Components/SubmitButtonCommon'
 import axios from 'axios'
 import { toast } from 'react-toastify'
-import { BaseURL } from '../../Utils/BaseUrl'
 
 export const action = async ({ request }) => {
   const formData = await request.formData()
   const data = Object.fromEntries(formData)
 
   try {
-    const response = await BaseURL.patch(
-      '/api/v1/users/updateUserPassword',
-      data
-    )
+    const response = await axios.patch('/api/v1/users/updateUserPassword', data)
     toast.success(response.data.message)
     toast.success('Please login with the new password to continue')
     return redirect('/login')
