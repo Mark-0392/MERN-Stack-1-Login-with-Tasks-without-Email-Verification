@@ -16,14 +16,14 @@ import { getUserDetails } from '../../Features/Users/userSlice'
 import { useEffect } from 'react'
 
 const Navbar = () => {
-  const { user: users } = useLoaderData()
+  // const { user: users } = useLoaderData()
 
   const user = useSelector((state) => state.userState.user)
 
   const dispatch = useDispatch()
-  // useEffect(() => {
-  //   dispatch(getUserDetails())
-  // }, [])
+  useEffect(() => {
+    dispatch(getUserDetails())
+  }, [])
 
   const { isOpen } = useSelector((state) => state.setting)
 
@@ -54,7 +54,7 @@ const Navbar = () => {
               Hi!
               <span className="text-base md:text-xl text-pink-600 font-Ysabeau_Bold ">
                 {' '}
-                {user.userName || users.userName}
+                {user.userName}
               </span>
             </p>
 
