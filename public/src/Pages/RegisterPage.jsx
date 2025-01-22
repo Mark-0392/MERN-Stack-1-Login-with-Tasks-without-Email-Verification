@@ -11,7 +11,7 @@ export const action = async ({ request }) => {
   const data = Object.fromEntries(formData)
 
   try {
-    const response = await axios.post('api/v1/auth/register', data)
+    const response = await axios.post('/api/v1/auth/register', data)
     // console.log(response)
 
     toast.success(response.data.msg)
