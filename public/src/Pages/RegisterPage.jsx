@@ -5,19 +5,15 @@ import RegisterPageHeader from '../Components/Register Page Components/RegisterP
 import { BaseURL } from '../../Utils/BaseUrl'
 import { toast } from 'react-toastify'
 
-export const action = async (e, { request }) => {
+export const action = async ({ request }) => {
   const formData = await request.formData()
   const data = Object.fromEntries(formData)
 
   try {
     const response = await BaseURL.post('api/v1/auth/register', data)
-    // console.log(response)
-
     toast.success(response.data.msg)
     return redirect('/login')
   } catch (error) {
-    // console.log(error)
-
     const error_Message =
       error?.response?.data?.msg || 'Please check your credentials'
     toast.error(error_Message)

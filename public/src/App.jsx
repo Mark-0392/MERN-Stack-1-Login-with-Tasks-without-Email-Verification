@@ -32,6 +32,7 @@ import { action as createTaskAction } from './Pages/Landing'
 import { action as editTaskAction } from './Pages/EditTasks'
 
 // importing loaders
+import { loader as getUserLoader } from './Pages/HomeLayout'
 import { loader as getAllTasksLoader } from './Pages/Landing'
 import { loader as getSingleTaskLoader } from './Pages/SingleTask'
 import { loader as editTaskLoader } from './Pages/EditTasks'
@@ -70,7 +71,7 @@ const router = createBrowserRouter([
     path: '/dashboard',
     element: <HomeLayout />,
     errorElement: <Error />,
-
+    loader: getUserLoader,
     children: [
       {
         index: true,
