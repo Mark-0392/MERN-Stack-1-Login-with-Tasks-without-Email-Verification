@@ -18,8 +18,6 @@ export const action =
       toast.success('You have successfully logged in')
       return redirect('/dashboard')
     } catch (error) {
-      console.log(error)
-
       const error_Message = error?.response?.data?.msg
       toast.error(error_Message)
       return null
