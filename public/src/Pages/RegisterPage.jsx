@@ -28,7 +28,7 @@ export const action = async ({ request }) => {
 
 function RegisterPage() {
   return (
-    <section className=" grid place-items-center min-h-screen  lg:bg-registerPage px-2 max-lg:bg-milkbar bg-cover bg-center background">
+    <section className=" grid place-items-center min-h-screen  lg:bg-[url('assets/flat-mountains.png')] px-2 max-lg:bg-milkbar bg-cover bg-center background">
       <div className="grid w-full max-w-[500px] border lg:border-none rounded-lg border-black/60 lg:border-slate-800  bg-black/45 ">
         <div className=" shadow-md rounded-lg px-3 py-8 lg:py-7 lg:px-6 lg:bg-white ">
           <RegisterPageHeader />

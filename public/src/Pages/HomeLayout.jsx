@@ -9,17 +9,17 @@ const HomeLayout = () => {
   const isPageLoading = navigation.state === 'loading'
   return (
     <>
-      <div className="h-screen bg-slate-50 max-w-6xl mx-auto relative">
-        {isPageLoading ? (
+      <div className="h-screen  max-w-6xl mx-auto relative">
+        {/* {isPageLoading ? (
           <Loading />
         ) : (
           <>
             <Navbar /> <Sidebar /> <Outlet />
           </>
-        )}
-        {/* <Navbar />
+        )} */}
+        <Navbar />
         <Sidebar />
-        <Outlet /> */}
+        {isPageLoading ? <Loading /> : <Outlet />}
       </div>
     </>
   )
