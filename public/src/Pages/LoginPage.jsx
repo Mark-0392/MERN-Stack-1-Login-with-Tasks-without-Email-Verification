@@ -31,7 +31,7 @@ function LoginPage() {
         method="POST"
         className="w-full max-w-[500px]  h-[420px] shadow-lg rounded-lg bg-black/60 border-white/10 px-4 flex flex-col justify-center gap-2  lg:bg-white lg:border-pink-700"
       >
-        <h2 className="text-2xl font-Playfair_SemiBold font-semibold  text-white lg:text-pink-600 lg:text-4xl text-center ">
+        <h2 className="animate-pulse mb-2 text-2xl font-Ysabeau_Bold text-white lg:text-pink-600 md:text-3xl  text-center">
           Sign In
         </h2>
         <div className="mb-4">

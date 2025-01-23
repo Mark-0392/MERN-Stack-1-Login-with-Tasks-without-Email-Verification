@@ -1,13 +1,12 @@
 import CreateTaskForm from '../Components/CreateTaskForm'
 
 import { Form, redirect, useLoaderData } from 'react-router-dom'
-import landing from '../../src/assets/landing.jpg'
+
 import axios from 'axios'
 
 import { toast } from 'react-toastify'
-import { getUserDetails } from '../../Features/Users/userSlice'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+
+import { useDispatch } from 'react-redux'
 import ShowTasks from '../Components/ShowTasks'
 
 export const loader = async () => {
