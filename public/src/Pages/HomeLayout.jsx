@@ -45,15 +45,9 @@ const HomeLayout = () => {
   return (
     <>
       <div className="h-screen  max-w-6xl mx-auto relative">
-        {isPageLoading ? (
-          <Loading2 />
-        ) : (
-          <>
-            <Navbar />
-            <Sidebar />
-            {isPageLoading ? <Loading /> : <Outlet />}
-          </>
-        )}
+        <Navbar />
+        <Sidebar />
+        {isPageLoading ? <Loading /> : <Outlet />}
       </div>
     </>
   )
