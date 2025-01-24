@@ -10,6 +10,7 @@ import Sidebar from '../Components/Sidebar'
 import Loading from '../../Utils/loading'
 import Loading2 from '../../Utils/Loading2'
 import { toast } from 'react-toastify'
+import Loading3 from '../../Utils/Loading3'
 
 export const loader = async () => {
   // const response = await axios.get('/api/v1/users/showMe')
@@ -47,7 +48,7 @@ const HomeLayout = () => {
       <div className="h-screen  max-w-6xl mx-auto relative">
         <Navbar />
         <Sidebar />
-        {isPageLoading ? <Loading /> : <Outlet />}
+        {isPageLoading ? <Loading3 /> : <Outlet />}
       </div>
     </>
   )

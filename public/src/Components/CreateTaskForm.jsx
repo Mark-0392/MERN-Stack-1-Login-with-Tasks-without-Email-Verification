@@ -7,7 +7,7 @@ const CreateTaskForm = ({ type, name }) => {
         type={type}
         name={name}
         // placeholder="e.g. buy mangoes"
-        className="w-full h-12 md:h-10 border px-4 py-2 border-gray-300 rounded-lg md:rounded-r-none md:rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-sm text-gray-500 basis-3/4"
+        className="w-full h-12 md:h-10 border px-4 py-2 border-gray-300 rounded-lg md:rounded-r-none md:rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-sm text-gray-800 basis-3/4"
       />
 
       <button

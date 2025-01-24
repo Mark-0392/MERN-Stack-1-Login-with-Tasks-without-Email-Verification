@@ -1,6 +1,6 @@
 const Loading = () => {
   return (
-    <div class=" grid place-items-center border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto max-sm:h-[calc(100%-40px)] md:h-[calc(100%-44px)] lg:h-[calc(100%-52px)]">
+    <div class=" grid place-items-center border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto max-sm:h-[calc(100%-40px)] md:h-[calc(100%-44px)] lg:h-[calc(100%-52px)] bg-[url('assets/landing.jpg')]">
       <div className="flex items-center gap-x-2">
         <h1 className="font-Playfair_SemiBold text-lg lg:text-xl text-yellow-400">
           Loading....

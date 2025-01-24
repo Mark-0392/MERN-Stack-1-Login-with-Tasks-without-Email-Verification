@@ -49,18 +49,18 @@ const EditTasks = () => {
   const { task } = useLoaderData()
 
   return (
-    <div className="max-lg:h-[calc(100%-36px)] lg:h-[calc(100%-56px)]  grid place-items-center bg-slate-800 lg:bg-white border">
+    <div className="h-[calc(100%-40px)] md:h-[calc(100%-44px)] lg:h-[calc(100%-52px)]  grid place-items-center bg-landing bg-cover bg-no-repeat bg-center">
       <Form
-        className="w-11/12 max-w-xl grid gap-y-4 max-sm:mt-12  border rounded-md  px-2 py-4 hover:shadow-md "
+        className="w-11/12 max-w-xl grid gap-y-4 max-sm:mt-12  border border-white rounded-md  px-2 py-4 "
         method="patch"
       >
-        <h1 className="text-lg font-semibold text-white lg:text-black lg:text-xl text-center">
+        <h1 className="text-lg font-  bold text-slate-900 lg:text-xl text-center">
           Edit Task
         </h1>
         <div className="grid lg:grid-cols-4 items-center space-y-1">
           <label
             htmlFor="task"
-            className="block lg:col-span-1 text-sm md:text-lg font-serif  text-white mb-1 px-2 lg:text-black"
+            className="block lg:col-span-1 text-sm md:text-lg font-serif  text-black mb-1 px-2 "
           >
             Task
           </label>
@@ -69,14 +69,14 @@ const EditTasks = () => {
             id="task"
             defaultValue={task.name}
             name="task"
-            className="w-full lg:col-span-3 h-10 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-base text-gray-500 p-2"
+            className="w-full lg:col-span-3 h-10 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 text-base text-gray-800 p-2"
           />
         </div>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 items-center">
           <label
             htmlFor="isCompleted"
-            className="block lg:col-span-1 text-sm md:text-lg font-serif  text-white px-2 lg:text-black"
+            className="block lg:col-span-1 text-sm md:text-lg font-serif  text-slate-900 px-2 "
           >
             Task Completed
           </label>
