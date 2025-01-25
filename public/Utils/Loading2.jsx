@@ -1,12 +1,13 @@
 const Loading2 = () => {
   return (
-    <div class=" grid place-items-center border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto min-h-screen">
+    <div class=" grid place-items-center border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto min-h-screen max-lg:bg-night bg-cover bg-center px-2 lg:bg-loginPage">
       <div className="flex items-center gap-x-2">
         {/* <h1 className="font-Playfair_SemiBold text-lg lg:text-xl text-yellow-400">
           Loading....
         </h1> */}
-        <div className="w-16 h-16">
+        <div className="w-16 h-16 ">
           <svg
+            fill="#FFFFFF"
             // width="50"
             // height="50"
             viewBox="0 0 24 24"

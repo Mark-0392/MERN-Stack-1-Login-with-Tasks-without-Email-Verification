@@ -48,7 +48,7 @@ const Landing = () => {
     <main className=" w-full h-[calc(100%-40px)] md:h-[calc(100%-44px)] lg:h-[calc(100%-52px)] px-2  mx-auto flex flex-col items-center justify-center  bg-landing bg-cover bg-no-repeat bg-center">
       <div className="max-w-xl mx-auto w-full py-4  ">
         {/* <h2>hello there</h2> */}
-        <h2 className="text-center max-sm:text-lg  mb-2 lg:text-3xl font-LeckerLi_One_Regular">
+        <h2 className="text-center max-sm:text-lg  mb-2 lg:text-3xl font-LeckerLi_One_Regular text-gray-800">
           Add Tasks
         </h2>
 
