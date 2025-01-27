@@ -1,10 +1,11 @@
-import { Form, Link, redirect } from 'react-router-dom'
+import { Form, Link, redirect, useNavigation } from 'react-router-dom'
 import SubmitButtonCommon from '../Components/SubmitButtonCommon'
 import CommonFormLayout from '../Components/CommonFormLayout'
 import RegisterPageHeader from '../Components/Register Page Components/RegisterPage Header'
 
 import { toast } from 'react-toastify'
 import axios from 'axios'
+import Loading2 from '../../Utils/Loading2'
 
 export const action = async ({ request }) => {
   const formData = await request.formData()
@@ -27,35 +28,60 @@ export const action = async ({ request }) => {
 }
 
 function RegisterPage() {
+  const navigation = useNavigation()
+  const isLoading = navigation.state === 'loading'
   return (
-    <section className=" grid place-items-center min-h-screen  lg:bg-[url('assets/flat-mountains.png')] px-2 max-lg:bg-milkbar bg-cover bg-center background">
-      <div className="grid w-full max-w-[500px] border lg:border-none rounded-lg border-black/60 lg:border-slate-800  bg-black/45 ">
-        <div className=" shadow-md rounded-lg px-3 py-8 lg:py-7 lg:px-6 lg:bg-white ">
-          <RegisterPageHeader />
+    <>
+      {isLoading ? (
+        <Loading2 />
+      ) : (
+        <section className=" grid place-items-center min-h-screen  lg:bg-[url('assets/flat-mountains.png')] px-2 max-lg:bg-milkbar bg-cover bg-center bg-no-repeat">
+          <div className="grid w-full max-w-[500px] border lg:border-none rounded-lg border-black/60 lg:border-slate-800  bg-black/45 ">
+            <div className=" shadow-md rounded-lg px-3 py-8 lg:py-7 lg:px-6 lg:bg-white ">
+              <RegisterPageHeader />
 
-          {/* A separate div for form details */}
-          <Form method="post" className="box-border space-y-6 ">
-            <CommonFormLayout
-              label="Name"
-              type="text"
-              name="name"
-              placeholder="Enter your name here"
-              required
-            />
+              {/* A separate div for form details */}
+              <Form method="post" className="box-border space-y-6 ">
+                <CommonFormLayout
+                  label="Name"
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name here"
+                  required
+                />
 
-            <CommonFormLayout
-              label="Email"
-              type="email"
-              name="email"
-              placeholder="Enter your email address here"
-            />
-            <CommonFormLayout
-              label="Password"
-              type="password"
-              name="password"
-              placeholder="Set your password"
-            />
-            {/* <div className=" flex items-center">
+                <CommonFormLayout
+                  label="Email"
+                  type="email"
+                  name="email"
+                  placeholder="Enter your email address here"
+                />
+                <CommonFormLayout
+                  label="Password"
+                  type="password"
+                  name="password"
+                  placeholder="Set your password"
+                />
+
+                <SubmitButtonCommon
+                  width={'w-full'}
+                  text="Register"
+                  navigationState="registering...."
+                />
+              </Form>
+            </div>
+          </div>
+        </section>
+      )}
+    </>
+  )
+}
+export default RegisterPage
+
+// bg-sky bg-cover bg-center
+
+{
+  /* <div className=" flex items-center">
               <input
                 type="checkbox"
                 name="terms-and-conditions"
@@ -74,18 +100,5 @@ function RegisterPage() {
                   Terms & Privacy Policy.
                 </Link>
               </label>
-            </div> */}
-            <SubmitButtonCommon
-              width={'w-full'}
-              text="Register"
-              navigationState="registering...."
-            />
-          </Form>
-        </div>
-      </div>
-    </section>
-  )
+            </div> */
 }
-export default RegisterPage
-
-// bg-sky bg-cover bg-center

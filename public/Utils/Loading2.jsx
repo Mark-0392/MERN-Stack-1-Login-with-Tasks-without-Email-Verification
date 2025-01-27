@@ -1,6 +1,6 @@
 const Loading2 = () => {
   return (
-    <div class=" grid place-items-center border-blue-300 shadow rounded-md p-4 max-w-sm w-full mx-auto min-h-screen max-lg:bg-night bg-cover bg-center px-2 lg:bg-loginPage">
+    <div class=" grid place-items-center min-h-screen  lg:bg-[url('assets/flat-mountains.png')] px-2 max-lg:bg-milkbar bg-cover bg-center bg-no-repeat">
       <div className="flex items-center gap-x-2">
         {/* <h1 className="font-Playfair_SemiBold text-lg lg:text-xl text-yellow-400">
           Loading....

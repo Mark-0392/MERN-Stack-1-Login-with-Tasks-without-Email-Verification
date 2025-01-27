@@ -104,8 +104,8 @@ const Loading = () => {
             </rect>
           </svg>
         </div>
-        <h1 className="font-DM_Serif_FontBold animate-spin text-lg lg:text-xl text-red-600">
-          Loading
+        <h1 className="font-DM_Serif_FontBold  text-lg lg:text-xl text-black">
+          ...Loading...
         </h1>
 
         <div className=" ">
